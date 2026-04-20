@@ -252,9 +252,7 @@
 	left: 0;
 	height: 100%;
 	border-radius: 2px;
-	transition:
-		width 0.3s ease,
-		background 0.5s ease;
+	transition: background 0.5s ease;
 }
 
 .slider-input {
@@ -667,6 +665,8 @@
 }
 
 /* ─── Responsive ─── */
+
+/* ── Tablet landscape / small desktop ── */
 @media (max-width: 1100px) {
 	.product-title {
 		font-size: 2.4rem;
@@ -677,6 +677,7 @@
 	}
 }
 
+/* ── Tablet portrait / large mobile ── */
 @media (max-width: 900px) {
 	.home-page {
 		height: auto;
@@ -684,14 +685,30 @@
 		overflow: auto;
 	}
 
-	.hero {
-		grid-template-columns: 1fr;
-		padding: 1rem 1.5rem 1.5rem;
-		flex: none;
-	}
-
 	.nav {
 		padding: 0.8rem 1.5rem;
+	}
+
+	.hero {
+		grid-template-columns: 1fr;
+		padding: 1rem 1.25rem 2rem;
+		flex: none;
+		gap: 1.5rem;
+	}
+
+	.hero-left {
+		gap: 0.75rem;
+	}
+
+	/* Give the showcase a fixed height so it doesn't collapse */
+	.product-showcase {
+		min-height: 280px;
+		border-radius: 1.25rem;
+	}
+
+	.image-crossfade,
+	.image-crossfade[data-size='large'] {
+		width: 65%;
 	}
 
 	.product-title {
@@ -700,6 +717,7 @@
 
 	.hero-right {
 		padding-top: 0;
+		gap: 1.25rem;
 	}
 
 	.capacity-cards {
@@ -708,24 +726,108 @@
 
 	.capacity-card {
 		max-width: none;
+		flex: 1 1 calc(50% - 0.5rem);
 	}
 }
 
+/* ── Mobile ── */
 @media (max-width: 600px) {
-	.product-title {
-		font-size: 1.8rem;
+	.nav {
+		padding: 0.75rem 1rem;
+	}
+
+	.nav-brand {
+		font-size: 1rem;
 	}
 
 	.nav-links {
 		display: none;
 	}
 
+	.hero {
+		padding: 0.75rem 1rem 2rem;
+		gap: 1.25rem;
+	}
+
+	.product-showcase {
+		min-height: 240px;
+		border-radius: 1rem;
+	}
+
+	.image-crossfade,
+	.image-crossfade[data-size='large'] {
+		width: 72%;
+	}
+
+	.product-title {
+		font-size: 1.9rem;
+	}
+
+	.product-description {
+		font-size: 0.9rem;
+	}
+
+	/* Form factor toggle — let buttons wrap on very narrow screens */
+	.form-factor-toggle {
+		flex-wrap: wrap;
+		border-radius: 1rem;
+	}
+
+	.toggle-option {
+		padding: 0.55rem 1.25rem;
+		font-size: 0.75rem;
+	}
+
 	.heat-panel {
-		padding: 0.75rem 1.25rem;
+		padding: 0.75rem 1rem;
+	}
+
+	.capacity-card {
+		flex: 1 1 100%;
+		max-width: none;
+		padding: 1rem 1.25rem;
+	}
+
+	.capacity-name {
+		font-size: 1.2rem;
+	}
+
+	.capacity-price {
+		font-size: 1.2rem;
 	}
 
 	.cta-row {
 		flex-direction: column;
 		align-items: stretch;
 	}
+
+	.cta-button {
+		justify-content: center;
+	}
 }
+
+/* ── Small mobile (≤ 400px) ── */
+@media (max-width: 400px) {
+	.product-title {
+		font-size: 1.6rem;
+	}
+
+	.product-showcase {
+		min-height: 200px;
+	}
+
+	.image-crossfade,
+	.image-crossfade[data-size='large'] {
+		width: 80%;
+	}
+
+	.toggle-option {
+		padding: 0.5rem 0.9rem;
+		font-size: 0.7rem;
+	}
+
+	.heat-label {
+		font-size: 0.58rem;
+	}
+}
+
