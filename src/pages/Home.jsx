@@ -109,7 +109,7 @@ const Home = () => {
             </div>
 
             {/* Product image with crossfade */}
-            <div className="image-crossfade">
+            <div className="image-crossfade" data-size={size}>
               {SHAPES.map(s => (
                 <img
                   key={s.id}
