@@ -43,8 +43,8 @@ const SHAPES = [
 
 /* ─── Size data ─── */
 const SIZES = [
-  { id: 'small', name: 'Small', dims: '10×5×5cm', vol: '~250ml', price: 10 },
-  { id: 'large', name: 'Large', dims: '12×6×5cm', vol: '~360ml', price: 12 },
+  { id: 'small', name: 'Small', dims: '18x14x5cm', price: 10 },
+  { id: 'large', name: 'Large', dims: '20x16x7cm', price: 12 },
 ]
 
 const Home = () => {
@@ -213,7 +213,7 @@ const Home = () => {
                     <span className="capacity-name">{sz.name}</span>
                     <span className="check-icon">✓</span>
                   </div>
-                  <p className="capacity-dims">{sz.dims} • {sz.vol}</p>
+                  <p className="capacity-dims">{sz.dims}</p>
                   <p className="capacity-price">₹{sz.price}</p>
                 </button>
               ))}
